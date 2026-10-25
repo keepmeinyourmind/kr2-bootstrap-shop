@@ -1,0 +1,457 @@
+/* ===============================
+   custom.css — фирменный стиль TechBox поверх Bootstrap.
+   Подключается ПОСЛЕ bootstrap.min.css, поэтому правила ниже
+   переопределяют значения фреймворка.
+
+   Идея стиля — «молния» из логотипа: кобальтовый синий + сигнальный жёлтый,
+   светло-серый фон-витрина, товары на белых плитках.
+   =============================== */
+
+/* 1. Шрифты (лежат локально в папке fonts/).
+   Unbounded — широкий шрифт для заголовков и цен, Onest — для текста.
+   Каждый файл содержит все начертания от обычного до жирного (400–700),
+   поэтому на один шрифт нужен один блок @font-face. */
+@font-face {
+  font-family: "Unbounded";
+  src: url("../fonts/Unbounded.woff2") format("woff2");
+  font-weight: 400 700;
+}
+
+@font-face {
+  font-family: "Onest";
+  src: url("../fonts/Onest.woff2") format("woff2");
+  font-weight: 400 700;
+}
+
+/* 2. Палитра и переменные Bootstrap.
+   Компоненты (кнопки, badge, alert, accordion, ссылки) берут цвета из --bs-*,
+   поэтому достаточно поменять переменные, а не переписывать каждый компонент. */
+:root {
+  --tb-cobalt: #1f3bff;
+  --tb-cobalt-dark: #142bd1;
+  --tb-volt: #ffd23f;
+  --tb-ink: #16181d;
+  --tb-shelf: #eef0f3;
+  --tb-line: #dfe2e8;
+  --tb-font-display: "Unbounded", sans-serif;
+
+  /* Основные цвета. Bootstrap хранит цвет ещё и в виде чисел R, G, B (переменные *-rgb):
+     из них он собирает фон значков и кнопок, например text-bg-primary. */
+  --bs-primary: var(--tb-cobalt);
+  --bs-primary-rgb: 31, 59, 255;
+  --bs-warning: var(--tb-volt);
+  --bs-warning-rgb: 255, 210, 63;
+  --bs-dark-rgb: 22, 24, 29;
+
+  /* Светлые оттенки синего для alert-primary и раскрытого пункта accordion. */
+  --bs-primary-text-emphasis: #10208f;
+  --bs-primary-bg-subtle: #e6eaff;
+  --bs-primary-border-subtle: #b9c3ff;
+
+  /* Шрифт, текст, рамки, ссылки и скругления по всему сайту. */
+  --bs-body-font-family: "Onest", sans-serif;
+  --bs-body-color: var(--tb-ink);
+  --bs-border-color: var(--tb-line);
+  --bs-link-color: var(--tb-cobalt);
+  --bs-link-color-rgb: 31, 59, 255;
+  --bs-link-hover-color-rgb: 20, 43, 209;
+  --bs-border-radius: 0.75rem;
+  --bs-border-radius-lg: 1.25rem;
+}
+
+/* Фон страницы — «полка витрины», а карточки и поля остаются белыми. */
+body {
+  background-color: var(--tb-shelf);
+}
+
+/* 3. Типографика: широкий Unbounded для заголовков и цен. */
+h1,
+h2,
+.page-title,
+.section-title,
+.hero__title,
+.price,
+.navbar-brand {
+  font-family: var(--tb-font-display);
+  letter-spacing: -0.02em;
+}
+
+.page-title,
+.section-title {
+  font-weight: 700;
+}
+
+h3,
+.h5,
+.h6 {
+  font-weight: 700;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+/* 4. Кнопки: настраиваются собственными переменными --bs-btn-*. */
+.btn {
+  --bs-btn-font-weight: 500;
+  --bs-btn-padding-x: 1.1rem;
+}
+
+.btn-lg {
+  --bs-btn-padding-x: 1.5rem;
+  --bs-btn-font-size: 1.05rem;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--tb-cobalt);
+  --bs-btn-border-color: var(--tb-cobalt);
+  --bs-btn-hover-bg: var(--tb-cobalt-dark);
+  --bs-btn-hover-border-color: var(--tb-cobalt-dark);
+  --bs-btn-active-bg: #0f22a8;
+  --bs-btn-active-border-color: #0f22a8;
+  --bs-btn-disabled-bg: var(--tb-cobalt);
+  --bs-btn-disabled-border-color: var(--tb-cobalt);
+  --bs-btn-focus-shadow-rgb: 31, 59, 255;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--tb-cobalt);
+  --bs-btn-border-color: var(--tb-cobalt);
+  --bs-btn-hover-bg: var(--tb-cobalt);
+  --bs-btn-hover-border-color: var(--tb-cobalt);
+  --bs-btn-active-bg: var(--tb-cobalt-dark);
+  --bs-btn-active-border-color: var(--tb-cobalt-dark);
+  --bs-btn-focus-shadow-rgb: 31, 59, 255;
+}
+
+.btn-warning {
+  --bs-btn-color: var(--tb-ink);
+  --bs-btn-bg: var(--tb-volt);
+  --bs-btn-border-color: var(--tb-volt);
+  --bs-btn-hover-color: var(--tb-ink);
+  --bs-btn-hover-bg: #ffc400;
+  --bs-btn-hover-border-color: #ffc400;
+  --bs-btn-active-color: var(--tb-ink);
+  --bs-btn-active-bg: #f0b800;
+  --bs-btn-active-border-color: #f0b800;
+}
+
+.btn-outline-dark {
+  --bs-btn-color: var(--tb-ink);
+  --bs-btn-border-color: var(--tb-ink);
+  --bs-btn-hover-bg: var(--tb-ink);
+  --bs-btn-hover-border-color: var(--tb-ink);
+}
+
+/* Фокус полей и чекбоксов — в фирменном цвете. */
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  border-color: #8c9bff;
+  box-shadow: 0 0 0 0.25rem rgba(31, 59, 255, 0.3);
+}
+
+.form-check-input:checked {
+  background-color: var(--tb-cobalt);
+  border-color: var(--tb-cobalt);
+}
+
+/* Карточки — белые плитки без теней на сером фоне. */
+.card {
+  --bs-card-border-color: var(--tb-line);
+}
+
+/* 5. Навигация */
+.site-navbar {
+  background-color: #fff;
+  border-bottom: 1px solid var(--tb-line);
+}
+
+.site-navbar .navbar-brand {
+  font-size: 1.15rem;
+}
+
+.site-navbar .nav-link {
+  font-weight: 500;
+}
+
+.site-navbar .nav-link.active {
+  color: var(--tb-cobalt);
+}
+
+/* 6. Hero: кобальтовая панель с каруселью */
+.hero {
+  background-color: var(--tb-cobalt);
+  border-radius: var(--bs-border-radius-lg);
+  padding: 2rem 1.5rem 3.5rem;
+  overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  .hero {
+    padding: 3.5rem 4.5rem 4rem;
+  }
+}
+
+.hero__title {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hero__text {
+  font-size: 1.125rem;
+  opacity: 0.85;
+}
+
+/* Фото товара — белая «плитка» с поворотом, как ценник на витрине. */
+.hero__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background-color: #fff;
+  border-radius: var(--bs-border-radius-lg);
+  transform: rotate(-3deg);
+}
+
+/* На телефоне фото ниже и уже, чтобы заголовок помещался на первом экране. */
+@media (max-width: 991.98px) {
+  .hero__image {
+    max-width: 18rem;
+    aspect-ratio: 4 / 3;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.hero .carousel-indicators {
+  justify-content: flex-start;
+  margin: 0 0 1.25rem;
+  left: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .hero .carousel-indicators {
+    left: 4.5rem;
+  }
+}
+
+.hero .carousel-indicators [data-bs-target] {
+  width: 2rem;
+  height: 0.3rem;
+  border: 0;
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+.hero .carousel-indicators .active {
+  background-color: var(--tb-volt);
+}
+
+.hero .carousel-control-prev,
+.hero .carousel-control-next {
+  width: 3.5rem;
+}
+
+@media (max-width: 991.98px) {
+  .hero .carousel-control-prev,
+  .hero .carousel-control-next {
+    display: none;
+  }
+}
+
+/* 7. Преимущества: полоса с разделителями вместо одинаковых карточек */
+.perks {
+  background-color: #fff;
+  border: 1px solid var(--tb-line);
+  border-radius: var(--bs-border-radius-lg);
+}
+
+.perk {
+  padding: 1.25rem 1.5rem;
+}
+
+/* На телефоне и планшете — линия снизу, на широком экране — слева. */
+.perk {
+  border-bottom: 1px solid var(--tb-line);
+}
+
+@media (min-width: 992px) {
+  .perk {
+    border-bottom: 0;
+    border-left: 1px solid var(--tb-line);
+  }
+
+  .perk:first-child {
+    border-left: 0;
+  }
+}
+
+.perk__icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  color: var(--tb-ink);
+  background-color: var(--tb-volt);
+}
+
+.perk__title {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.contact-card .perk__icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* 8. Категории: плитки с названием и количеством товаров */
+.category-tile {
+  color: var(--tb-ink);
+}
+
+.category-tile .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 7.5rem;
+}
+
+.category-tile__name {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.category-tile__count {
+  font-size: 0.875rem;
+  color: var(--bs-secondary-color);
+}
+
+.category-tile:hover,
+.category-tile:focus-visible {
+  color: #fff;
+  background-color: var(--tb-cobalt);
+}
+
+.category-tile:hover .category-tile__count,
+.category-tile:focus-visible .category-tile__count {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* 9. Карточки товаров */
+.product-card:hover,
+.product-card:focus-within {
+  border-color: var(--tb-ink);
+}
+
+.product-card__media {
+  position: relative;
+}
+
+/* В узких карточках кнопки компактнее и при нехватке места переносятся на новую строку. */
+.product-card .btn {
+  --bs-btn-padding-x: 0.75rem;
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1;
+  padding: 0.45em 0.75em;
+}
+
+/* height: auto — иначе атрибут height="600" растягивает фото по высоте. */
+.product-card__image {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Карточка-заглушка для товаров без фотографии (аксессуары): логотип на жёлтом. */
+.product-card__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  background-color: var(--tb-volt);
+  border-top-left-radius: var(--bs-card-inner-border-radius);
+  border-top-right-radius: var(--bs-card-inner-border-radius);
+}
+
+.product-card__placeholder--large {
+  border-radius: 0;
+}
+
+/* 10. Секции и формы */
+.section-white {
+  background-color: #fff;
+  border-top: 1px solid var(--tb-line);
+  border-bottom: 1px solid var(--tb-line);
+}
+
+.subscribe-card {
+  background-color: var(--tb-ink);
+}
+
+.accordion {
+  --bs-accordion-active-bg: var(--bs-primary-bg-subtle);
+  --bs-accordion-active-color: var(--tb-ink);
+  --bs-accordion-btn-font-weight: 500;
+}
+
+.accordion-button {
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link {
+  color: var(--bs-body-color);
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--tb-cobalt);
+}
+
+.tab-content {
+  background-color: #fff;
+}
+
+/* Списки без рамок берут фон родителя (белая карточка или серая страница). */
+.list-group-flush {
+  --bs-list-group-bg: transparent;
+}
+
+/* При переходе по якорю (catalog.html#audio) заголовок раздела
+   не прячется под закреплённой шапкой. */
+.catalog-section {
+  scroll-margin-top: 5rem;
+}
+
+/* На широких экранах фильтры и условия заказа «прилипают» при прокрутке */
+@media (min-width: 992px) {
+  .filters-card,
+  .order-aside {
+    position: sticky;
+    top: 5.5rem;
+  }
+}
+
+/* 11. Подвал (тёмная тема Bootstrap через data-bs-theme="dark") */
+.site-footer {
+  color: var(--bs-body-color);
+  background-color: var(--tb-ink);
+}
+
+.footer-title {
+  font-family: var(--bs-body-font-family);
+  letter-spacing: 0;
+  color: var(--tb-volt);
+}

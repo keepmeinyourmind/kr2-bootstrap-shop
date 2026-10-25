@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Форма заявки TechBox на компонентах Bootstrap: выбор товара, доставки и способа оплаты.">
+  <title>Оформление заявки — TechBox</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <!-- Bootstrap подключён локально, custom.css — после него, чтобы переопределять стили -->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="d-flex flex-column min-vh-100" id="top">
+  <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-primary" href="#main">Перейти к содержимому</a>
+
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg site-navbar" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+          <img src="images/logo.svg" alt="" width="32" height="32">
+          TechBox
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar" aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Категории</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="catalog.html#phones">Смартфоны</a></li>
+              <li><a class="dropdown-item" href="catalog.html#laptops">Ноутбуки</a></li>
+              <li><a class="dropdown-item" href="catalog.html#audio">Аудио</a></li>
+              <li><a class="dropdown-item" href="catalog.html#wearables">Носимая электроника</a></li>
+              <li><a class="dropdown-item" href="catalog.html#tablets">Планшеты</a></li>
+              <li><a class="dropdown-item" href="catalog.html#accessories">Аксессуары</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="order.html">Заявка</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacts.html">Контакты</a>
+          </li>
+          </ul>
+          <a class="btn btn-primary mb-2 mb-lg-0" href="order.html">Оставить заявку</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <nav class="container pt-4" aria-label="Хлебные крошки">
+      <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Заявка</li>
+      </ol>
+    </nav>
+
+  <main id="main" class="container py-4">
+    <div class="row g-4">
+      <div class="col-12 col-lg-8">
+        <div class="card border-0">
+          <div class="card-header bg-primary text-white">
+            <h1 class="h4 mb-0">Форма заявки</h1>
+          </div>
+          <div class="card-body p-4">
+            <div class="alert alert-primary" role="alert">
+              Заполните форму. Поля со звёздочкой <span class="text-danger">*</span> обязательны. Оплата — только после получения товара.
+            </div>
+
+            <!-- Сообщение показывается после успешной отправки (js/main.js) -->
+            <div class="alert alert-success d-none" id="order-success" role="status">
+              <strong>Спасибо!</strong> Заявка принята. Менеджер свяжется с вами в течение 15 минут.
+            </div>
+
+            <form class="needs-validation" id="order-form" data-success="Заявка отправлена!" novalidate>
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label" for="order-name">Имя <span class="text-danger">*</span></label>
+                  <input class="form-control" type="text" id="order-name" name="name" autocomplete="name" minlength="2" placeholder="Иван Иванов" required>
+                  <div class="invalid-feedback">Введите имя (минимум 2 символа).</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="order-email">E-mail <span class="text-danger">*</span></label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">@</span>
+                    <input class="form-control" type="email" id="order-email" name="email" autocomplete="email" placeholder="you@example.com" required>
+                    <div class="invalid-feedback">Введите корректный e-mail.</div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="order-phone">Телефон <span class="text-danger">*</span></label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">+7</span>
+                    <input class="form-control" type="tel" id="order-phone" name="phone" autocomplete="tel-national" placeholder="900 000-00-00" minlength="10" required>
+                    <div class="invalid-feedback">Введите номер телефона, минимум 10 цифр.</div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-8">
+                  <label class="form-label" for="order-product">Товар <span class="text-danger">*</span></label>
+                  <select class="form-select" id="order-product" name="product" required>
+                    <option value="" selected disabled>Выберите товар</option>
+                  <option value="1">iPhone 17 Pro Max — 139&nbsp;990&nbsp;₽</option>
+                  <option value="2">MacBook Pro — 189&nbsp;990&nbsp;₽</option>
+                  <option value="3">AirPods Max — 54&nbsp;990&nbsp;₽</option>
+                  <option value="4">Apple Watch Series 10 — 44&nbsp;990&nbsp;₽</option>
+                  <option value="5">iPad Pro — 109&nbsp;990&nbsp;₽</option>
+                  <option value="6">HomePod — 32&nbsp;990&nbsp;₽</option>
+                  <option value="7">Зарядка MagSafe — 4&nbsp;990&nbsp;₽</option>
+                  <option value="8">Чехол Silicone Case — 5&nbsp;490&nbsp;₽</option>
+                  <option value="9">AirTag, 4 шт. — 12&nbsp;990&nbsp;₽</option>
+                    <option value="consultation">Нужна консультация</option>
+                  </select>
+                  <div class="invalid-feedback">Выберите товар из списка.</div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <label class="form-label" for="order-qty">Количество</label>
+                  <div class="input-group">
+                    <input class="form-control" type="number" id="order-qty" name="quantity" value="1" min="1" max="10">
+                    <span class="input-group-text">шт.</span>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <fieldset>
+                    <legend class="form-label fs-6">Способ получения</legend>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="delivery" id="delivery-pickup" value="pickup" checked>
+                      <label class="form-check-label" for="delivery-pickup">Самовывоз — бесплатно</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="delivery" id="delivery-courier" value="courier">
+                      <label class="form-check-label" for="delivery-courier">Курьер по Москве — 500 ₽</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="delivery" id="delivery-post" value="post">
+                      <label class="form-check-label" for="delivery-post">Почта России — 390 ₽</label>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="order-payment">Оплата</label>
+                  <select class="form-select" id="order-payment" name="payment">
+                    <option value="card">Картой при получении</option>
+                    <option value="cash">Наличными при получении</option>
+                    <option value="sbp">По СБП при получении</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="order-address">Адрес доставки</label>
+                  <input class="form-control" type="text" id="order-address" name="address" autocomplete="street-address" placeholder="Улица, дом, квартира">
+                  <div class="form-text">Нужен только для доставки курьером или почтой.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="order-comment">Комментарий</label>
+                  <textarea class="form-control" id="order-comment" name="comment" rows="4" maxlength="500" placeholder="Цвет, объём памяти, удобное время звонка"></textarea>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="order-agree" name="agree" required>
+                    <label class="form-check-label" for="order-agree">Согласен на обработку персональных данных <span class="text-danger">*</span></label>
+                    <div class="invalid-feedback">Без согласия заявку отправить нельзя.</div>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="order-news" name="news">
+                    <label class="form-check-label" for="order-news">Присылать новости и акции на e-mail</label>
+                  </div>
+                </div>
+                <div class="col-12 d-flex flex-wrap gap-2">
+                  <button class="btn btn-primary btn-lg" type="submit">Отправить заявку</button>
+                  <button class="btn btn-outline-secondary btn-lg" type="reset">Очистить</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <aside class="col-12 col-lg-4">
+        <div class="vstack gap-4 order-aside">
+          <div class="card border-0">
+            <div class="card-header bg-transparent fw-semibold">Условия заказа</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between gap-2"><span>Самовывоз</span><span class="badge text-bg-success">0 ₽</span></li>
+              <li class="list-group-item d-flex justify-content-between gap-2"><span>Курьер по Москве</span><span>500 ₽</span></li>
+              <li class="list-group-item d-flex justify-content-between gap-2"><span>Почта России</span><span>390 ₽</span></li>
+              <li class="list-group-item d-flex justify-content-between gap-2"><span>Курьер от 50&nbsp;000 ₽</span><span class="badge text-bg-success">Бесплатно</span></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="h5 mb-3">Как проходит заказ</h2>
+            <div class="accordion" id="orderSteps">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+              data-bs-target="#orderSteps-0" aria-expanded="true" aria-controls="orderSteps-0">Заявка</button>
+          </h3>
+          <div id="orderSteps-0" class="accordion-collapse collapse show" data-bs-parent="#orderSteps">
+            <div class="accordion-body">Вы заполняете форму или оставляете телефон в окне быстрого заказа.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#orderSteps-1" aria-expanded="false" aria-controls="orderSteps-1">Звонок менеджера</button>
+          </h3>
+          <div id="orderSteps-1" class="accordion-collapse collapse" data-bs-parent="#orderSteps">
+            <div class="accordion-body">В течение 15 минут уточняем наличие, цвет и удобное время доставки.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#orderSteps-2" aria-expanded="false" aria-controls="orderSteps-2">Доставка и оплата</button>
+          </h3>
+          <div id="orderSteps-2" class="accordion-collapse collapse" data-bs-parent="#orderSteps">
+            <div class="accordion-body">Оплачиваете картой или наличными только после проверки товара.</div>
+          </div>
+        </div>
+      </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer mt-auto py-5" data-bs-theme="dark">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <a class="d-flex align-items-center gap-2 fw-bold fs-5 text-reset text-decoration-none mb-2" href="index.html">
+            <img src="images/logo.svg" alt="" width="28" height="28"> TechBox
+          </a>
+          <p class="text-body-secondary small mb-0">Учебный интернет-магазин техники и гаджетов. Контрольная работа №2 по дисциплине «Фронтенд и бэкенд разработка».</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h2 class="h6 footer-title">Магазин</h2>
+          <ul class="list-unstyled small mb-0">
+            <li><a class="link-secondary" href="catalog.html">Каталог</a></li>
+            <li><a class="link-secondary" href="catalog.html#phones">Смартфоны</a></li>
+            <li><a class="link-secondary" href="catalog.html#audio">Аудио</a></li>
+            <li><a class="link-secondary" href="catalog.html#accessories">Аксессуары</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h2 class="h6 footer-title">Покупателям</h2>
+          <ul class="list-unstyled small mb-0">
+            <li><a class="link-secondary" href="order.html">Оформить заявку</a></li>
+            <li><a class="link-secondary" href="contacts.html">Контакты</a></li>
+            <li><a class="link-secondary" href="contacts.html#faq">Вопросы и ответы</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h2 class="h6 footer-title">Контакты</h2>
+          <ul class="list-unstyled small text-body-secondary mb-0">
+            <li><a class="link-secondary" href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+            <li><a class="link-secondary" href="mailto:info@techbox.example">info@techbox.example</a></li>
+            <li>г. Москва, ул. Учебная, д. 1 · ежедневно 10:00–20:00</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="d-flex flex-wrap justify-content-between gap-2">
+        <p class="small text-body-secondary mb-0">&copy; 2026 TechBox. Учебный проект, товары и цены условные.</p>
+        <a class="small link-secondary" href="#top">↑ Наверх</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Контейнер для всплывающих уведомлений (toast) -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast align-items-center text-bg-dark border-0" id="app-toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">Готово!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
