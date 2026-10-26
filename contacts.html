@@ -11,162 +11,134 @@
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="d-flex flex-column min-vh-100" id="top">
-  <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-primary" href="#main">Перейти к содержимому</a>
 
   <header class="sticky-top">
-    <nav class="navbar navbar-expand-lg site-navbar" aria-label="Основная навигация">
+    <nav class="navbar navbar-expand-lg site-navbar py-1" aria-label="Основная навигация">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
-          <img src="images/logo.svg" alt="" width="32" height="32">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold" href="index.html">
+          <img src="images/logo.svg" alt="" width="24" height="24">
           TechBox
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
           aria-controls="mainNavbar" aria-expanded="false" aria-label="Открыть меню">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mainNavbar">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Главная</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="catalog.html">Каталог</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Категории</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="catalog.html#phones">Смартфоны</a></li>
-              <li><a class="dropdown-item" href="catalog.html#laptops">Ноутбуки</a></li>
-              <li><a class="dropdown-item" href="catalog.html#audio">Аудио</a></li>
-              <li><a class="dropdown-item" href="catalog.html#wearables">Носимая электроника</a></li>
-              <li><a class="dropdown-item" href="catalog.html#tablets">Планшеты</a></li>
-              <li><a class="dropdown-item" href="catalog.html#accessories">Аксессуары</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="order.html">Заявка</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="contacts.html">Контакты</a>
-          </li>
+          <ul class="navbar-nav mx-auto gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Каталог</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="catalog.html#phones">Смартфоны</a></li>
+                <li><a class="dropdown-item" href="catalog.html#laptops">Ноутбуки</a></li>
+                <li><a class="dropdown-item" href="catalog.html#audio">Аудио</a></li>
+                <li><a class="dropdown-item" href="catalog.html#wearables">Носимая электроника</a></li>
+                <li><a class="dropdown-item" href="catalog.html#tablets">Планшеты</a></li>
+                <li><a class="dropdown-item" href="catalog.html#accessories">Аксессуары</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="contacts.html">Контакты</a></li>
           </ul>
-          <a class="btn btn-primary mb-2 mb-lg-0" href="order.html">Оставить заявку</a>
+          <a class="btn btn-sm btn-dark rounded-pill px-3 mb-2 mb-lg-0" href="order.html">Оставить заявку</a>
         </div>
       </div>
     </nav>
   </header>
 
-    <nav class="container pt-4" aria-label="Хлебные крошки">
-      <ol class="breadcrumb mb-0">
-          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Контакты</li>
+    <nav class="container pt-3" aria-label="Хлебные крошки">
+      <ol class="breadcrumb small mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Контакты</li>
       </ol>
     </nav>
 
   <main id="main" class="container py-4">
-    <h1 class="page-title mb-4">Контакты</h1>
-    <div class="row g-4 mb-5">
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card h-100 border-0 contact-card">
-            <div class="card-body">
-              <div class="perk__icon mb-3"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-              <h2 class="h6 text-body-secondary mb-1">Телефон</h2>
-              <p class="fw-semibold mb-0"><a class="link-body-emphasis" href="tel:+79000000000">+7 (900) 000-00-00</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card h-100 border-0 contact-card">
-            <div class="card-body">
-              <div class="perk__icon mb-3"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
-              <h2 class="h6 text-body-secondary mb-1">E-mail</h2>
-              <p class="fw-semibold mb-0"><a class="link-body-emphasis" href="mailto:info@techbox.example">info@techbox.example</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card h-100 border-0 contact-card">
-            <div class="card-body">
-              <div class="perk__icon mb-3"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-              <h2 class="h6 text-body-secondary mb-1">Адрес</h2>
-              <p class="fw-semibold mb-0">г. Москва, ул. Учебная, д. 1</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card h-100 border-0 contact-card">
-            <div class="card-body">
-              <div class="perk__icon mb-3"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-              <h2 class="h6 text-body-secondary mb-1">Часы работы</h2>
-              <p class="fw-semibold mb-0">Ежедневно с 10:00 до 20:00</p>
-            </div>
-          </div>
-        </div>
+    <div class="text-center mb-5">
+      <h1 class="display-6 mb-2">Контакты</h1>
+      <p class="text-body-secondary mb-0">Поможем выбрать технику и ответим на вопросы.</p>
     </div>
 
-    <div class="row g-4 mb-5">
+    <div class="row g-4 text-center pb-5 mb-5 border-bottom">
+      <div class="col-12 col-sm-6 col-lg-3">
+        <h2 class="fs-6 text-body-secondary fw-normal mb-1">Телефон</h2>
+        <p class="fs-5 fw-semibold mb-0"><a href="tel:+79000000000">+7 (900) 000-00-00</a></p>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <h2 class="fs-6 text-body-secondary fw-normal mb-1">E-mail</h2>
+        <p class="fs-5 fw-semibold mb-0"><a href="mailto:info@techbox.example">info@techbox.example</a></p>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <h2 class="fs-6 text-body-secondary fw-normal mb-1">Адрес</h2>
+        <p class="fs-5 fw-semibold mb-0">г. Москва, ул. Учебная, д. 1</p>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <h2 class="fs-6 text-body-secondary fw-normal mb-1">Часы работы</h2>
+        <p class="fs-5 fw-semibold mb-0">Ежедневно с 10:00 до 20:00</p>
+      </div>
+    </div>
+
+    <div class="row g-4 g-lg-5 mb-5">
       <section class="col-12 col-lg-7" aria-labelledby="map-title">
-        <h2 class="h3 section-title mb-3" id="map-title">Как нас найти</h2>
-        <div class="ratio ratio-4x3 rounded-4 overflow-hidden">
+        <h2 class="h4 mb-3" id="map-title">Как нас найти</h2>
+        <div class="ratio ratio-4x3 rounded-3 overflow-hidden border">
           <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A4c0e001c937c902e7363c65e42576e5b10b37491c9562b72b2091ea5d79f8857&amp;source=constructor" title="Карта: как найти магазин TechBox" loading="lazy"></iframe>
         </div>
       </section>
       <section class="col-12 col-lg-5" aria-labelledby="feedback-title">
-        <h2 class="h3 section-title mb-3" id="feedback-title">Обратная связь</h2>
-        <form class="card border-0 needs-validation" data-success="Сообщение отправлено. Мы ответим на e-mail в течение дня." novalidate>
-          <div class="card-body p-4">
-            <div class="mb-3">
-              <label class="form-label" for="feedback-name">Имя</label>
-              <input class="form-control" type="text" id="feedback-name" name="name" autocomplete="name" minlength="2" required>
-              <div class="invalid-feedback">Введите имя.</div>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="feedback-email">E-mail</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">@</span>
-                <input class="form-control" type="email" id="feedback-email" name="email" autocomplete="email" required>
-                <div class="invalid-feedback">Введите корректный e-mail.</div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="feedback-topic">Тема</label>
-              <select class="form-select" id="feedback-topic" name="topic" required>
-                <option value="" selected disabled>Выберите тему</option>
-                <option>Вопрос о товаре</option>
-                <option>Статус заявки</option>
-                <option>Гарантия и возврат</option>
-                <option>Другое</option>
-              </select>
-              <div class="invalid-feedback">Выберите тему обращения.</div>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="feedback-message">Сообщение</label>
-              <textarea class="form-control" id="feedback-message" name="message" rows="4" minlength="10" required></textarea>
-              <div class="invalid-feedback">Напишите сообщение (минимум 10 символов).</div>
-            </div>
-            <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="feedback-agree" name="agree" required>
-              <label class="form-check-label" for="feedback-agree">Согласен на обработку персональных данных</label>
-              <div class="invalid-feedback">Без согласия сообщение отправить нельзя.</div>
-            </div>
-            <button class="btn btn-primary w-100" type="submit">Отправить</button>
+        <h2 class="h4 mb-3" id="feedback-title">Обратная связь</h2>
+        <form class="needs-validation" data-success="Сообщение отправлено. Мы ответим на e-mail в течение дня." novalidate>
+          <div class="mb-3">
+            <label class="form-label" for="feedback-name">Имя</label>
+            <input class="form-control" type="text" id="feedback-name" name="name" autocomplete="name" minlength="2" required>
+            <div class="invalid-feedback">Введите имя.</div>
           </div>
+          <div class="mb-3">
+            <label class="form-label" for="feedback-email">E-mail</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text">@</span>
+              <input class="form-control" type="email" id="feedback-email" name="email" autocomplete="email" required>
+              <div class="invalid-feedback">Введите корректный e-mail.</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="feedback-topic">Тема</label>
+            <select class="form-select" id="feedback-topic" name="topic" required>
+              <option value="" selected disabled>Выберите тему</option>
+              <option>Вопрос о товаре</option>
+              <option>Статус заявки</option>
+              <option>Гарантия и возврат</option>
+              <option>Другое</option>
+            </select>
+            <div class="invalid-feedback">Выберите тему обращения.</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="feedback-message">Сообщение</label>
+            <textarea class="form-control" id="feedback-message" name="message" rows="4" minlength="10" required></textarea>
+            <div class="invalid-feedback">Напишите сообщение (минимум 10 символов).</div>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="feedback-agree" name="agree" required>
+            <label class="form-check-label" for="feedback-agree">Согласен на обработку персональных данных</label>
+            <div class="invalid-feedback">Без согласия сообщение отправить нельзя.</div>
+          </div>
+          <button class="btn btn-dark rounded-pill px-4" type="submit">Отправить</button>
         </form>
       </section>
     </div>
 
-    <section id="faq" aria-labelledby="contacts-faq-title">
-      <h2 class="h3 section-title mb-3" id="contacts-faq-title">Вопросы и ответы</h2>
-      <div class="accordion" id="contactsFaq">
+    <section class="mx-auto pb-4" style="max-width: 760px" id="faq" aria-labelledby="contacts-faq-title">
+      <h2 class="h3 text-center mb-4" id="contacts-faq-title">Вопросы и ответы</h2>
+      <div class="accordion accordion-flush" id="contactsFaq">
         <div class="accordion-item">
           <h3 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#contactsFaq-0" aria-expanded="false" aria-controls="contactsFaq-0">Как оформить заказ?</button>
           </h3>
           <div id="contactsFaq-0" class="accordion-collapse collapse" data-bs-parent="#contactsFaq">
-            <div class="accordion-body">Нажмите «Заказать» на карточке товара и оставьте телефон в окне быстрого заказа или заполните подробную <a href="order.html">форму заявки</a>. Менеджер перезвонит в течение 15 минут в рабочее время.</div>
+            <div class="accordion-body text-body-secondary">Нажмите «Заказать» у товара и оставьте телефон в окне быстрого заказа или заполните <a href="order.html">форму заявки</a>. Менеджер перезвонит в течение 15 минут в рабочее время.</div>
           </div>
         </div>
         <div class="accordion-item">
@@ -175,7 +147,7 @@
               data-bs-target="#contactsFaq-1" aria-expanded="false" aria-controls="contactsFaq-1">Сколько стоит доставка?</button>
           </h3>
           <div id="contactsFaq-1" class="accordion-collapse collapse" data-bs-parent="#contactsFaq">
-            <div class="accordion-body">Самовывоз из магазина бесплатный. Курьер по Москве — 500 ₽, доставка Почтой России — 390 ₽. При заказе от 50&nbsp;000 ₽ курьерская доставка бесплатна.</div>
+            <div class="accordion-body text-body-secondary">Самовывоз бесплатный. Курьер по Москве — 500 ₽, Почта России — 390 ₽. При заказе от 50&nbsp;000 ₽ курьер бесплатно.</div>
           </div>
         </div>
         <div class="accordion-item">
@@ -184,7 +156,7 @@
               data-bs-target="#contactsFaq-2" aria-expanded="false" aria-controls="contactsFaq-2">Какая гарантия на технику?</button>
           </h3>
           <div id="contactsFaq-2" class="accordion-collapse collapse" data-bs-parent="#contactsFaq">
-            <div class="accordion-body">На всю технику действует официальная гарантия производителя 12 месяцев, на аксессуары — от 6 месяцев. Гарантийный талон выдаём вместе с чеком.</div>
+            <div class="accordion-body text-body-secondary">Официальная гарантия производителя 12 месяцев, на аксессуары — от 6 месяцев. Гарантийный талон выдаём вместе с чеком.</div>
           </div>
         </div>
         <div class="accordion-item">
@@ -193,52 +165,52 @@
               data-bs-target="#contactsFaq-3" aria-expanded="false" aria-controls="contactsFaq-3">Можно ли вернуть товар?</button>
           </h3>
           <div id="contactsFaq-3" class="accordion-collapse collapse" data-bs-parent="#contactsFaq">
-            <div class="accordion-body">Да, в течение 14 дней, если сохранены упаковка, комплектация и товарный вид. Деньги вернём тем же способом, которым была произведена оплата.</div>
+            <div class="accordion-body text-body-secondary">Да, в течение 14 дней, если сохранены упаковка, комплектация и товарный вид.</div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer mt-auto py-5" data-bs-theme="dark">
+  <footer class="site-footer section-light mt-auto pt-4 pb-3">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4">
-          <a class="d-flex align-items-center gap-2 fw-bold fs-5 text-reset text-decoration-none mb-2" href="index.html">
-            <img src="images/logo.svg" alt="" width="28" height="28"> TechBox
-          </a>
-          <p class="text-body-secondary small mb-0">Учебный интернет-магазин техники и гаджетов. Контрольная работа №2 по дисциплине «Фронтенд и бэкенд разработка».</p>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2">
-          <h2 class="h6 footer-title">Магазин</h2>
-          <ul class="list-unstyled small mb-0">
-            <li><a class="link-secondary" href="catalog.html">Каталог</a></li>
-            <li><a class="link-secondary" href="catalog.html#phones">Смартфоны</a></li>
-            <li><a class="link-secondary" href="catalog.html#audio">Аудио</a></li>
-            <li><a class="link-secondary" href="catalog.html#accessories">Аксессуары</a></li>
+      <p class="pb-3 mb-3 border-bottom">Учебный проект «Контрольная работа №2». Товары и цены условные. Доставка по Москве — на следующий день, оплата при получении.</p>
+      <div class="row g-3 pb-3">
+        <div class="col-6 col-md-3">
+          <h2 class="fs-6 fw-semibold text-dark mb-2">Каталог</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="catalog.html#phones">Смартфоны</a></li>
+            <li><a href="catalog.html#laptops">Ноутбуки</a></li>
+            <li><a href="catalog.html#audio">Аудио</a></li>
+            <li><a href="catalog.html#accessories">Аксессуары</a></li>
           </ul>
         </div>
-        <div class="col-6 col-md-3 col-lg-2">
-          <h2 class="h6 footer-title">Покупателям</h2>
-          <ul class="list-unstyled small mb-0">
-            <li><a class="link-secondary" href="order.html">Оформить заявку</a></li>
-            <li><a class="link-secondary" href="contacts.html">Контакты</a></li>
-            <li><a class="link-secondary" href="contacts.html#faq">Вопросы и ответы</a></li>
+        <div class="col-6 col-md-3">
+          <h2 class="fs-6 fw-semibold text-dark mb-2">Покупателям</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="order.html">Оформить заявку</a></li>
+            <li><a href="contacts.html#faq">Вопросы и ответы</a></li>
           </ul>
         </div>
-        <div class="col-12 col-lg-4">
-          <h2 class="h6 footer-title">Контакты</h2>
-          <ul class="list-unstyled small text-body-secondary mb-0">
-            <li><a class="link-secondary" href="tel:+79000000000">+7 (900) 000-00-00</a></li>
-            <li><a class="link-secondary" href="mailto:info@techbox.example">info@techbox.example</a></li>
-            <li>г. Москва, ул. Учебная, д. 1 · ежедневно 10:00–20:00</li>
+        <div class="col-6 col-md-3">
+          <h2 class="fs-6 fw-semibold text-dark mb-2">Магазин</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="contacts.html">Контакты</a></li>
+            <li>г. Москва, ул. Учебная, д. 1</li>
+            <li>Ежедневно 10:00–20:00</li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="fs-6 fw-semibold text-dark mb-2">Связь</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+            <li><a href="mailto:info@techbox.example">info@techbox.example</a></li>
           </ul>
         </div>
       </div>
-      <hr class="my-4">
-      <div class="d-flex flex-wrap justify-content-between gap-2">
-        <p class="small text-body-secondary mb-0">&copy; 2026 TechBox. Учебный проект, товары и цены условные.</p>
-        <a class="small link-secondary" href="#top">↑ Наверх</a>
+      <div class="d-flex flex-wrap justify-content-between gap-2 pt-3 border-top">
+        <span>&copy; 2026 TechBox</span>
+        <a href="#top">Наверх</a>
       </div>
     </div>
   </footer>
