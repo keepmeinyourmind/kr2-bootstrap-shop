@@ -11,428 +11,370 @@
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="d-flex flex-column min-vh-100" id="top">
-  <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-primary" href="#main">Перейти к содержимому</a>
 
   <header class="sticky-top">
-    <nav class="navbar navbar-expand-lg site-navbar" aria-label="Основная навигация">
+    <nav class="navbar navbar-expand-lg site-navbar py-1" aria-label="Основная навигация">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
-          <img src="images/logo.svg" alt="" width="32" height="32">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold" href="index.html">
+          <img src="images/logo.svg" alt="" width="24" height="24">
           TechBox
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
           aria-controls="mainNavbar" aria-expanded="false" aria-label="Открыть меню">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mainNavbar">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Главная</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="catalog.html">Каталог</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Категории</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="catalog.html#phones">Смартфоны</a></li>
-              <li><a class="dropdown-item" href="catalog.html#laptops">Ноутбуки</a></li>
-              <li><a class="dropdown-item" href="catalog.html#audio">Аудио</a></li>
-              <li><a class="dropdown-item" href="catalog.html#wearables">Носимая электроника</a></li>
-              <li><a class="dropdown-item" href="catalog.html#tablets">Планшеты</a></li>
-              <li><a class="dropdown-item" href="catalog.html#accessories">Аксессуары</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="order.html">Заявка</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contacts.html">Контакты</a>
-          </li>
+          <ul class="navbar-nav mx-auto gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Каталог</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="catalog.html#phones">Смартфоны</a></li>
+                <li><a class="dropdown-item" href="catalog.html#laptops">Ноутбуки</a></li>
+                <li><a class="dropdown-item" href="catalog.html#audio">Аудио</a></li>
+                <li><a class="dropdown-item" href="catalog.html#wearables">Носимая электроника</a></li>
+                <li><a class="dropdown-item" href="catalog.html#tablets">Планшеты</a></li>
+                <li><a class="dropdown-item" href="catalog.html#accessories">Аксессуары</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
           </ul>
-          <a class="btn btn-primary mb-2 mb-lg-0" href="order.html">Оставить заявку</a>
+          <a class="btn btn-sm btn-dark rounded-pill px-3 mb-2 mb-lg-0" href="order.html">Оставить заявку</a>
         </div>
       </div>
     </nav>
   </header>
 
-    <nav class="container pt-4" aria-label="Хлебные крошки">
-      <ol class="breadcrumb mb-0">
-          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Каталог</li>
+    <nav class="container pt-3" aria-label="Хлебные крошки">
+      <ol class="breadcrumb small mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Каталог</li>
       </ol>
     </nav>
 
   <main id="main" class="container py-4">
-    <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
-      <h1 class="page-title mb-0">Каталог техники</h1>
-      <span class="badge rounded-pill text-bg-primary fs-6">9 товаров</span>
+    <div class="text-center mb-4">
+      <h1 class="display-6 mb-2">Каталог</h1>
+      <p class="text-body-secondary mb-0">9 товаров с официальной гарантией</p>
     </div>
-    <div class="alert alert-primary alert-dismissible fade show" role="alert">
-      Выберите категорию в меню «Категории» или прокрутите каталог. Нажмите «Заказать», чтобы оставить быструю заявку.
+
+    <!-- Быстрый переход к разделам каталога -->
+    <ul class="nav nav-underline justify-content-center flex-wrap mb-4">
+        <li class="nav-item"><a class="nav-link" href="#phones">Смартфоны</a></li>
+        <li class="nav-item"><a class="nav-link" href="#laptops">Ноутбуки</a></li>
+        <li class="nav-item"><a class="nav-link" href="#audio">Аудио</a></li>
+        <li class="nav-item"><a class="nav-link" href="#wearables">Носимая электроника</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tablets">Планшеты</a></li>
+        <li class="nav-item"><a class="nav-link" href="#accessories">Аксессуары</a></li>
+    </ul>
+
+    <div class="row g-2 align-items-center mb-4">
+      <div class="col-12 col-md-6">
+        <form action="catalog.html" role="search">
+          <label class="visually-hidden" for="catalog-search">Поиск по названию</label>
+          <div class="input-group">
+            <input class="form-control" type="search" id="catalog-search" name="q" placeholder="Поиск по названию">
+            <button class="btn btn-outline-dark" type="submit">Найти</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-8 col-md-4">
+        <label class="visually-hidden" for="catalog-sort">Сортировка</label>
+        <select class="form-select" id="catalog-sort" name="sort">
+          <option value="popular" selected>Сначала популярные</option>
+          <option value="price-asc">Сначала дешевле</option>
+          <option value="price-desc">Сначала дороже</option>
+        </select>
+      </div>
+      <div class="col-4 col-md-2 d-grid">
+        <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#filtersOffcanvas" aria-controls="filtersOffcanvas">Фильтры</button>
+      </div>
+    </div>
+
+    <div class="alert alert-light border alert-dismissible fade show small" role="alert">
+      Выберите раздел выше или откройте фильтры. Нажмите «Заказать», чтобы оставить быструю заявку.
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрыть"></button>
     </div>
 
-    <div class="row g-4">
-      <!-- Фильтры: на ширине lg и больше — колонка, на мобильных — offcanvas -->
-      <aside class="col-12 col-lg-3">
-        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="filtersOffcanvas" aria-labelledby="filtersOffcanvasLabel">
-          <div class="offcanvas-header">
-            <h2 class="offcanvas-title h5" id="filtersOffcanvasLabel">Фильтры</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#filtersOffcanvas" aria-label="Закрыть"></button>
-          </div>
-          <div class="offcanvas-body">
-            <!-- Форма фильтров — статичная разметка на компонентах Bootstrap, без JavaScript-логики -->
-            <form class="card border-0 w-100 filters-card" action="catalog.html">
-              <div class="card-body">
-                <h2 class="h5 d-none d-lg-flex align-items-center gap-2"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4L3 5Z"/></svg> Фильтры</h2>
-                <fieldset class="mb-4">
-                  <legend class="fs-6 fw-semibold">Категория</legend>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="category" value="phones" id="cat-phones">
-                <label class="form-check-label d-flex justify-content-between align-items-center gap-2" for="cat-phones">Смартфоны
-                  <span class="badge rounded-pill text-bg-secondary">1</span></label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="category" value="laptops" id="cat-laptops">
-                <label class="form-check-label d-flex justify-content-between align-items-center gap-2" for="cat-laptops">Ноутбуки
-                  <span class="badge rounded-pill text-bg-secondary">1</span></label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="category" value="audio" id="cat-audio">
-                <label class="form-check-label d-flex justify-content-between align-items-center gap-2" for="cat-audio">Аудио
-                  <span class="badge rounded-pill text-bg-secondary">2</span></label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="category" value="wearables" id="cat-wearables">
-                <label class="form-check-label d-flex justify-content-between align-items-center gap-2" for="cat-wearables">Носимая электроника
-                  <span class="badge rounded-pill text-bg-secondary">1</span></label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="category" value="tablets" id="cat-tablets">
-                <label class="form-check-label d-flex justify-content-between align-items-center gap-2" for="cat-tablets">Планшеты
-                  <span class="badge rounded-pill text-bg-secondary">1</span></label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="category" value="accessories" id="cat-accessories">
-                <label class="form-check-label d-flex justify-content-between align-items-center gap-2" for="cat-accessories">Аксессуары
-                  <span class="badge rounded-pill text-bg-secondary">3</span></label>
-              </div>
-                </fieldset>
-                <fieldset class="mb-4">
-                  <legend class="fs-6 fw-semibold">Цена, ₽</legend>
-                  <div class="input-group input-group-sm mb-2">
-                    <span class="input-group-text">от</span>
-                    <input class="form-control" type="number" name="min" min="0" step="1000" placeholder="0" aria-label="Цена от">
-                  </div>
-                  <div class="input-group input-group-sm">
-                    <span class="input-group-text">до</span>
-                    <input class="form-control" type="number" name="max" min="0" step="1000" placeholder="200 000" aria-label="Цена до">
-                  </div>
-                </fieldset>
-                <div class="form-check form-switch mb-4">
-                  <input class="form-check-input" type="checkbox" role="switch" name="sale" id="filter-sale">
-                  <label class="form-check-label" for="filter-sale">Только со скидкой</label>
-                </div>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="submit">Применить</button>
-                  <button class="btn btn-outline-secondary" type="reset">Сбросить</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </aside>
-
-      <section class="col-12 col-lg-9" aria-label="Список товаров">
-        <div class="row g-2 align-items-center mb-4">
-          <div class="col-12 col-md-7">
-            <form action="catalog.html" role="search">
-              <label class="visually-hidden" for="catalog-search">Поиск по названию</label>
-              <div class="input-group">
-                <span class="input-group-text">🔍</span>
-                <input class="form-control" type="search" id="catalog-search" name="q" placeholder="Поиск по названию">
-              </div>
-            </form>
-          </div>
-          <div class="col-8 col-md-5 col-lg-5">
-            <label class="visually-hidden" for="catalog-sort">Сортировка</label>
-            <select class="form-select" id="catalog-sort" name="sort">
-              <option value="popular" selected>Сначала популярные</option>
-              <option value="price-asc">Сначала дешевле</option>
-              <option value="price-desc">Сначала дороже</option>
-              <option value="name">По названию</option>
-            </select>
-          </div>
-          <div class="col-4 d-lg-none">
-            <button class="btn btn-outline-primary w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#filtersOffcanvas" aria-controls="filtersOffcanvas">Фильтры</button>
-          </div>
-        </div>
-
-
-        <section class="catalog-section mb-5" id="phones" aria-labelledby="phones-title">
-          <h2 class="h4 section-title d-flex align-items-center gap-2 mb-3" id="phones-title">Смартфоны
-            <span class="badge rounded-pill text-bg-secondary fs-6">1</span></h2>
-          <div class="row g-4">
-        <div class="col-12 col-md-6 col-xl-4">
-          <article class="card product-card h-100">
-            <div class="product-card__media">
-              <span class="badge text-bg-dark product-card__badge">Хит</span>
-              <img src="images/product-1.jpg" class="card-img-top product-card__image" alt="iPhone 17 Pro Max" width="800" height="600" loading="lazy">
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="badge rounded-pill text-bg-light border align-self-start mb-2">Смартфоны</span>
-              <h3 class="card-title h5">iPhone 17 Pro Max</h3>
-              <p class="card-text small text-body-secondary">Экран 6,9" OLED 120 Гц, чип A19 Pro, тройная камера 48 Мп.</p>
-              <div class="mt-auto">
-                <p class="price mb-3">139&nbsp;990&nbsp;₽</p>
-                <div class="d-flex flex-wrap gap-2">
-                  <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
-                  <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="iPhone 17 Pro Max">Заказать</button>
-                </div>
-              </div>
+    <section class="catalog-section row g-4 py-5 border-top" id="phones" aria-labelledby="phones-title">
+      <div class="col-12 col-lg-3">
+        <h2 class="h4 mb-1" id="phones-title">Смартфоны</h2>
+        <p class="text-body-secondary small mb-0">1 товар · флагманы с лучшими камерами</p>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="row g-4">
+        <div class="col-6 col-md-4">
+          <article class="card product-card border-0 h-100 text-center">
+            <a href="product.html"><img class="product-img" src="images/product-1.jpg" alt="iPhone 17 Pro Max" width="800" height="600" loading="lazy"></a>
+            <div class="card-body px-0 d-flex flex-column">
+              <div class="mb-2"><span class="badge text-bg-light border">Хит</span></div>
+              <h3 class="card-title h6 mb-1"><a class="text-decoration-none" href="product.html">iPhone 17 Pro Max</a></h3>
+              <p class="card-text small text-body-secondary mb-2">Смартфоны</p>
+              <p class="mb-3">139&nbsp;990&nbsp;₽</p>
+              <button class="btn btn-sm btn-outline-dark rounded-pill mt-auto align-self-center px-3" type="button"
+                data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="iPhone 17 Pro Max">Заказать</button>
             </div>
           </article>
         </div>
-          </div>
-        </section>
-        <section class="catalog-section mb-5" id="laptops" aria-labelledby="laptops-title">
-          <h2 class="h4 section-title d-flex align-items-center gap-2 mb-3" id="laptops-title">Ноутбуки
-            <span class="badge rounded-pill text-bg-secondary fs-6">1</span></h2>
-          <div class="row g-4">
-        <div class="col-12 col-md-6 col-xl-4">
-          <article class="card product-card h-100">
-            <div class="product-card__media">
-              <span class="badge text-bg-primary product-card__badge">Новинка</span>
-              <img src="images/product-2.jpg" class="card-img-top product-card__image" alt="MacBook Pro" width="800" height="600" loading="lazy">
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="badge rounded-pill text-bg-light border align-self-start mb-2">Ноутбуки</span>
-              <h3 class="card-title h5">MacBook Pro</h3>
-              <p class="card-text small text-body-secondary">Дисплей Liquid Retina XDR, чип Apple серии M, два цвета корпуса.</p>
-              <div class="mt-auto">
-                <p class="price mb-3">189&nbsp;990&nbsp;₽</p>
-                <div class="d-flex flex-wrap gap-2">
-                  <a class="btn btn-outline-primary flex-fill" href="product-2.html">Подробнее</a>
-                  <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="MacBook Pro">Заказать</button>
-                </div>
-              </div>
+        </div>
+      </div>
+    </section>
+    <section class="catalog-section row g-4 py-5 border-top" id="laptops" aria-labelledby="laptops-title">
+      <div class="col-12 col-lg-3">
+        <h2 class="h4 mb-1" id="laptops-title">Ноутбуки</h2>
+        <p class="text-body-secondary small mb-0">1 товар · для работы, учёбы и монтажа</p>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="row g-4">
+        <div class="col-6 col-md-4">
+          <article class="card product-card border-0 h-100 text-center">
+            <a href="product-2.html"><img class="product-img" src="images/product-2.jpg" alt="MacBook Pro" width="800" height="600" loading="lazy"></a>
+            <div class="card-body px-0 d-flex flex-column">
+              <div class="mb-2"><span class="badge text-bg-light border">Новинка</span></div>
+              <h3 class="card-title h6 mb-1"><a class="text-decoration-none" href="product-2.html">MacBook Pro</a></h3>
+              <p class="card-text small text-body-secondary mb-2">Ноутбуки</p>
+              <p class="mb-3">189&nbsp;990&nbsp;₽</p>
+              <button class="btn btn-sm btn-outline-dark rounded-pill mt-auto align-self-center px-3" type="button"
+                data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="MacBook Pro">Заказать</button>
             </div>
           </article>
         </div>
-          </div>
-        </section>
-        <section class="catalog-section mb-5" id="audio" aria-labelledby="audio-title">
-          <h2 class="h4 section-title d-flex align-items-center gap-2 mb-3" id="audio-title">Аудио
-            <span class="badge rounded-pill text-bg-secondary fs-6">2</span></h2>
-          <div class="row g-4">
-        <div class="col-12 col-md-6 col-xl-4">
-          <article class="card product-card h-100">
-            <div class="product-card__media">
-              <span class="badge text-bg-warning product-card__badge">Скидка</span>
-              <img src="images/product-3.jpg" class="card-img-top product-card__image" alt="AirPods Max" width="800" height="600" loading="lazy">
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="badge rounded-pill text-bg-light border align-self-start mb-2">Аудио</span>
-              <h3 class="card-title h5">AirPods Max</h3>
-              <p class="card-text small text-body-secondary">Активное шумоподавление, пространственное аудио, до 20 часов работы.</p>
-              <div class="mt-auto">
-                <p class="price mb-3">54&nbsp;990&nbsp;₽
-              <span class="text-body-secondary text-decoration-line-through small ms-2">62&nbsp;990&nbsp;₽</span></p>
-                <div class="d-flex flex-wrap gap-2">
-                  <a class="btn btn-outline-primary flex-fill" href="product-3.html">Подробнее</a>
-                  <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="AirPods Max">Заказать</button>
-                </div>
-              </div>
+        </div>
+      </div>
+    </section>
+    <section class="catalog-section row g-4 py-5 border-top" id="audio" aria-labelledby="audio-title">
+      <div class="col-12 col-lg-3">
+        <h2 class="h4 mb-1" id="audio-title">Аудио</h2>
+        <p class="text-body-secondary small mb-0">2 товара · наушники и умные колонки</p>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="row g-4">
+        <div class="col-6 col-md-4">
+          <article class="card product-card border-0 h-100 text-center">
+            <a href="product-3.html"><img class="product-img" src="images/product-3.jpg" alt="AirPods Max" width="800" height="600" loading="lazy"></a>
+            <div class="card-body px-0 d-flex flex-column">
+              <div class="mb-2"><span class="badge text-bg-dark">Скидка</span></div>
+              <h3 class="card-title h6 mb-1"><a class="text-decoration-none" href="product-3.html">AirPods Max</a></h3>
+              <p class="card-text small text-body-secondary mb-2">Аудио</p>
+              <p class="mb-3">54&nbsp;990&nbsp;₽ <s class="text-body-secondary">62&nbsp;990&nbsp;₽</s></p>
+              <button class="btn btn-sm btn-outline-dark rounded-pill mt-auto align-self-center px-3" type="button"
+                data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="AirPods Max">Заказать</button>
             </div>
           </article>
         </div>
-        <div class="col-12 col-md-6 col-xl-4">
-          <article class="card product-card h-100">
-            <div class="product-card__media">
-              <span class="badge text-bg-dark product-card__badge">Хит</span>
-              <img src="images/product-6.jpg" class="card-img-top product-card__image" alt="HomePod" width="800" height="600" loading="lazy">
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="badge rounded-pill text-bg-light border align-self-start mb-2">Аудио</span>
-              <h3 class="card-title h5">HomePod</h3>
-              <p class="card-text small text-body-secondary">Пространственный звук, голосовой помощник и управление умным домом.</p>
-              <div class="mt-auto">
-                <p class="price mb-3">32&nbsp;990&nbsp;₽</p>
-                <div class="d-flex flex-wrap gap-2">
-                  <a class="btn btn-outline-primary flex-fill" href="product-6.html">Подробнее</a>
-                  <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="HomePod">Заказать</button>
-                </div>
-              </div>
+        <div class="col-6 col-md-4">
+          <article class="card product-card border-0 h-100 text-center">
+            <a href="product-6.html"><img class="product-img" src="images/product-6.jpg" alt="HomePod" width="800" height="600" loading="lazy"></a>
+            <div class="card-body px-0 d-flex flex-column">
+              <div class="mb-2"><span class="badge text-bg-light border">Хит</span></div>
+              <h3 class="card-title h6 mb-1"><a class="text-decoration-none" href="product-6.html">HomePod</a></h3>
+              <p class="card-text small text-body-secondary mb-2">Аудио</p>
+              <p class="mb-3">32&nbsp;990&nbsp;₽</p>
+              <button class="btn btn-sm btn-outline-dark rounded-pill mt-auto align-self-center px-3" type="button"
+                data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="HomePod">Заказать</button>
             </div>
           </article>
         </div>
-          </div>
-        </section>
-        <section class="catalog-section mb-5" id="wearables" aria-labelledby="wearables-title">
-          <h2 class="h4 section-title d-flex align-items-center gap-2 mb-3" id="wearables-title">Носимая электроника
-            <span class="badge rounded-pill text-bg-secondary fs-6">1</span></h2>
-          <div class="row g-4">
-        <div class="col-12 col-md-6 col-xl-4">
-          <article class="card product-card h-100">
-            <div class="product-card__media">
-              <span class="badge text-bg-primary product-card__badge">Новинка</span>
-              <img src="images/product-4.jpg" class="card-img-top product-card__image" alt="Apple Watch Series 10" width="800" height="600" loading="lazy">
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="badge rounded-pill text-bg-light border align-self-start mb-2">Носимая электроника</span>
-              <h3 class="card-title h5">Apple Watch Series 10</h3>
-              <p class="card-text small text-body-secondary">Экран Always-On, датчики здоровья, защита от воды до 50 метров.</p>
-              <div class="mt-auto">
-                <p class="price mb-3">44&nbsp;990&nbsp;₽</p>
-                <div class="d-flex flex-wrap gap-2">
-                  <a class="btn btn-outline-primary flex-fill" href="product-4.html">Подробнее</a>
-                  <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="Apple Watch Series 10">Заказать</button>
-                </div>
-              </div>
+        </div>
+      </div>
+    </section>
+    <section class="catalog-section row g-4 py-5 border-top" id="wearables" aria-labelledby="wearables-title">
+      <div class="col-12 col-lg-3">
+        <h2 class="h4 mb-1" id="wearables-title">Носимая электроника</h2>
+        <p class="text-body-secondary small mb-0">1 товар · часы с датчиками здоровья</p>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="row g-4">
+        <div class="col-6 col-md-4">
+          <article class="card product-card border-0 h-100 text-center">
+            <a href="product-4.html"><img class="product-img" src="images/product-4.jpg" alt="Apple Watch Series 10" width="800" height="600" loading="lazy"></a>
+            <div class="card-body px-0 d-flex flex-column">
+              <div class="mb-2"><span class="badge text-bg-light border">Новинка</span></div>
+              <h3 class="card-title h6 mb-1"><a class="text-decoration-none" href="product-4.html">Apple Watch Series 10</a></h3>
+              <p class="card-text small text-body-secondary mb-2">Носимая электроника</p>
+              <p class="mb-3">44&nbsp;990&nbsp;₽</p>
+              <button class="btn btn-sm btn-outline-dark rounded-pill mt-auto align-self-center px-3" type="button"
+                data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="Apple Watch Series 10">Заказать</button>
             </div>
           </article>
         </div>
-          </div>
-        </section>
-        <section class="catalog-section mb-5" id="tablets" aria-labelledby="tablets-title">
-          <h2 class="h4 section-title d-flex align-items-center gap-2 mb-3" id="tablets-title">Планшеты
-            <span class="badge rounded-pill text-bg-secondary fs-6">1</span></h2>
-          <div class="row g-4">
-        <div class="col-12 col-md-6 col-xl-4">
-          <article class="card product-card h-100">
-            <div class="product-card__media">
-              
-              <img src="images/product-5.jpg" class="card-img-top product-card__image" alt="iPad Pro" width="800" height="600" loading="lazy">
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="badge rounded-pill text-bg-light border align-self-start mb-2">Планшеты</span>
-              <h3 class="card-title h5">iPad Pro</h3>
-              <p class="card-text small text-body-secondary">Дисплей Ultra Retina XDR, чип Apple серии M, поддержка Apple Pencil Pro.</p>
-              <div class="mt-auto">
-                <p class="price mb-3">109&nbsp;990&nbsp;₽</p>
-                <div class="d-flex flex-wrap gap-2">
-                  <a class="btn btn-outline-primary flex-fill" href="product-5.html">Подробнее</a>
-                  <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="iPad Pro">Заказать</button>
-                </div>
-              </div>
+        </div>
+      </div>
+    </section>
+    <section class="catalog-section row g-4 py-5 border-top" id="tablets" aria-labelledby="tablets-title">
+      <div class="col-12 col-lg-3">
+        <h2 class="h4 mb-1" id="tablets-title">Планшеты</h2>
+        <p class="text-body-secondary small mb-0">1 товар · для рисования и работы</p>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="row g-4">
+        <div class="col-6 col-md-4">
+          <article class="card product-card border-0 h-100 text-center">
+            <a href="product-5.html"><img class="product-img" src="images/product-5.jpg" alt="iPad Pro" width="800" height="600" loading="lazy"></a>
+            <div class="card-body px-0 d-flex flex-column">
+              <div class="mb-2"><span class="badge text-bg-light border invisible">—</span></div>
+              <h3 class="card-title h6 mb-1"><a class="text-decoration-none" href="product-5.html">iPad Pro</a></h3>
+              <p class="card-text small text-body-secondary mb-2">Планшеты</p>
+              <p class="mb-3">109&nbsp;990&nbsp;₽</p>
+              <button class="btn btn-sm btn-outline-dark rounded-pill mt-auto align-self-center px-3" type="button"
+                data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="iPad Pro">Заказать</button>
             </div>
           </article>
         </div>
-          </div>
-        </section>
-        <section class="catalog-section mb-5" id="accessories" aria-labelledby="accessories-title">
-          <h2 class="h4 section-title d-flex align-items-center gap-2 mb-3" id="accessories-title">Аксессуары
-            <span class="badge rounded-pill text-bg-secondary fs-6">3</span></h2>
-          <div class="row g-4">
-        <div class="col-12 col-md-6 col-xl-4">
-          <article class="card product-card h-100">
-            <div class="product-card__media">
-              <span class="badge text-bg-primary product-card__badge">Новинка</span>
-              <div class="product-card__placeholder" role="img" aria-label="Зарядка MagSafe"><img src="images/logo.svg" alt="" width="56" height="56"></div>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="badge rounded-pill text-bg-light border align-self-start mb-2">Аксессуары</span>
-              <h3 class="card-title h5">Зарядка MagSafe</h3>
-              <p class="card-text small text-body-secondary">Беспроводная зарядка до 25 Вт с магнитным креплением.</p>
-              <div class="mt-auto">
-                <p class="price mb-3">4&nbsp;990&nbsp;₽</p>
-                <div class="d-flex flex-wrap gap-2">
-                  <a class="btn btn-outline-primary flex-fill" href="product-7.html">Подробнее</a>
-                  <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="Зарядка MagSafe">Заказать</button>
-                </div>
-              </div>
+        </div>
+      </div>
+    </section>
+    <section class="catalog-section row g-4 py-5 border-top" id="accessories" aria-labelledby="accessories-title">
+      <div class="col-12 col-lg-3">
+        <h2 class="h4 mb-1" id="accessories-title">Аксессуары</h2>
+        <p class="text-body-secondary small mb-0">3 товара · зарядки, чехлы и метки</p>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="row g-4">
+        <div class="col-6 col-md-4">
+          <article class="card product-card border-0 h-100 text-center">
+            <a href="product-7.html"><img class="product-img" src="images/product-7.jpg" alt="Зарядка MagSafe" width="800" height="600" loading="lazy"></a>
+            <div class="card-body px-0 d-flex flex-column">
+              <div class="mb-2"><span class="badge text-bg-light border">Новинка</span></div>
+              <h3 class="card-title h6 mb-1"><a class="text-decoration-none" href="product-7.html">Зарядка MagSafe</a></h3>
+              <p class="card-text small text-body-secondary mb-2">Аксессуары</p>
+              <p class="mb-3">4&nbsp;990&nbsp;₽</p>
+              <button class="btn btn-sm btn-outline-dark rounded-pill mt-auto align-self-center px-3" type="button"
+                data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="Зарядка MagSafe">Заказать</button>
             </div>
           </article>
         </div>
-        <div class="col-12 col-md-6 col-xl-4">
-          <article class="card product-card h-100">
-            <div class="product-card__media">
-              
-              <div class="product-card__placeholder" role="img" aria-label="Чехол Silicone Case"><img src="images/logo.svg" alt="" width="56" height="56"></div>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="badge rounded-pill text-bg-light border align-self-start mb-2">Аксессуары</span>
-              <h3 class="card-title h5">Чехол Silicone Case</h3>
-              <p class="card-text small text-body-secondary">Силиконовый чехол с MagSafe для iPhone 17 Pro Max.</p>
-              <div class="mt-auto">
-                <p class="price mb-3">5&nbsp;490&nbsp;₽</p>
-                <div class="d-flex flex-wrap gap-2">
-                  <a class="btn btn-outline-primary flex-fill" href="product-8.html">Подробнее</a>
-                  <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="Чехол Silicone Case">Заказать</button>
-                </div>
-              </div>
+        <div class="col-6 col-md-4">
+          <article class="card product-card border-0 h-100 text-center">
+            <a href="product-8.html"><img class="product-img" src="images/product-8.jpg" alt="Чехол Silicone Case" width="800" height="600" loading="lazy"></a>
+            <div class="card-body px-0 d-flex flex-column">
+              <div class="mb-2"><span class="badge text-bg-light border invisible">—</span></div>
+              <h3 class="card-title h6 mb-1"><a class="text-decoration-none" href="product-8.html">Чехол Silicone Case</a></h3>
+              <p class="card-text small text-body-secondary mb-2">Аксессуары</p>
+              <p class="mb-3">5&nbsp;490&nbsp;₽</p>
+              <button class="btn btn-sm btn-outline-dark rounded-pill mt-auto align-self-center px-3" type="button"
+                data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="Чехол Silicone Case">Заказать</button>
             </div>
           </article>
         </div>
-        <div class="col-12 col-md-6 col-xl-4">
-          <article class="card product-card h-100">
-            <div class="product-card__media">
-              <span class="badge text-bg-warning product-card__badge">Скидка</span>
-              <div class="product-card__placeholder" role="img" aria-label="AirTag, 4 шт."><img src="images/logo.svg" alt="" width="56" height="56"></div>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <span class="badge rounded-pill text-bg-light border align-self-start mb-2">Аксессуары</span>
-              <h3 class="card-title h5">AirTag, 4 шт.</h3>
-              <p class="card-text small text-body-secondary">Метки для поиска ключей, сумок и багажа через приложение «Локатор».</p>
-              <div class="mt-auto">
-                <p class="price mb-3">12&nbsp;990&nbsp;₽
-              <span class="text-body-secondary text-decoration-line-through small ms-2">14&nbsp;990&nbsp;₽</span></p>
-                <div class="d-flex flex-wrap gap-2">
-                  <a class="btn btn-outline-primary flex-fill" href="product-9.html">Подробнее</a>
-                  <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="AirTag, 4 шт.">Заказать</button>
-                </div>
-              </div>
+        <div class="col-6 col-md-4">
+          <article class="card product-card border-0 h-100 text-center">
+            <a href="product-9.html"><img class="product-img" src="images/product-9.jpg" alt="AirTag, 4 шт." width="800" height="600" loading="lazy"></a>
+            <div class="card-body px-0 d-flex flex-column">
+              <div class="mb-2"><span class="badge text-bg-dark">Скидка</span></div>
+              <h3 class="card-title h6 mb-1"><a class="text-decoration-none" href="product-9.html">AirTag, 4 шт.</a></h3>
+              <p class="card-text small text-body-secondary mb-2">Аксессуары</p>
+              <p class="mb-3">12&nbsp;990&nbsp;₽ <s class="text-body-secondary">14&nbsp;990&nbsp;₽</s></p>
+              <button class="btn btn-sm btn-outline-dark rounded-pill mt-auto align-self-center px-3" type="button"
+                data-bs-toggle="modal" data-bs-target="#quickOrderModal" data-product="AirTag, 4 шт.">Заказать</button>
             </div>
           </article>
         </div>
-          </div>
-        </section>
-      </section>
-    </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer mt-auto py-5" data-bs-theme="dark">
+  <!-- Фильтры в выезжающей панели (offcanvas). Форма — статичная разметка, без JavaScript-логики -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="filtersOffcanvas" aria-labelledby="filtersOffcanvasLabel">
+    <div class="offcanvas-header border-bottom">
+      <h2 class="offcanvas-title h5" id="filtersOffcanvasLabel">Фильтры</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+    </div>
+    <div class="offcanvas-body">
+      <form action="catalog.html">
+        <fieldset class="mb-4">
+          <legend class="fs-6 fw-semibold">Категория</legend>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="category" value="phones" id="cat-phones">
+            <label class="form-check-label" for="cat-phones">Смартфоны</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="category" value="laptops" id="cat-laptops">
+            <label class="form-check-label" for="cat-laptops">Ноутбуки</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="category" value="audio" id="cat-audio">
+            <label class="form-check-label" for="cat-audio">Аудио</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="category" value="wearables" id="cat-wearables">
+            <label class="form-check-label" for="cat-wearables">Носимая электроника</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="category" value="tablets" id="cat-tablets">
+            <label class="form-check-label" for="cat-tablets">Планшеты</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="category" value="accessories" id="cat-accessories">
+            <label class="form-check-label" for="cat-accessories">Аксессуары</label>
+          </div>
+        </fieldset>
+        <fieldset class="mb-4">
+          <legend class="fs-6 fw-semibold">Цена, ₽</legend>
+          <div class="input-group mb-2">
+            <span class="input-group-text">от</span>
+            <input class="form-control" type="number" name="min" min="0" step="1000" placeholder="0" aria-label="Цена от">
+          </div>
+          <div class="input-group">
+            <span class="input-group-text">до</span>
+            <input class="form-control" type="number" name="max" min="0" step="1000" placeholder="200 000" aria-label="Цена до">
+          </div>
+        </fieldset>
+        <div class="form-check form-switch mb-4">
+          <input class="form-check-input" type="checkbox" role="switch" name="sale" id="filter-sale">
+          <label class="form-check-label" for="filter-sale">Только со скидкой</label>
+        </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn-dark rounded-pill" type="submit">Применить</button>
+          <button class="btn btn-outline-dark rounded-pill" type="reset">Сбросить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer section-light mt-auto pt-4 pb-3">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4">
-          <a class="d-flex align-items-center gap-2 fw-bold fs-5 text-reset text-decoration-none mb-2" href="index.html">
-            <img src="images/logo.svg" alt="" width="28" height="28"> TechBox
-          </a>
-          <p class="text-body-secondary small mb-0">Учебный интернет-магазин техники и гаджетов. Контрольная работа №2 по дисциплине «Фронтенд и бэкенд разработка».</p>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2">
-          <h2 class="h6 footer-title">Магазин</h2>
-          <ul class="list-unstyled small mb-0">
-            <li><a class="link-secondary" href="catalog.html">Каталог</a></li>
-            <li><a class="link-secondary" href="catalog.html#phones">Смартфоны</a></li>
-            <li><a class="link-secondary" href="catalog.html#audio">Аудио</a></li>
-            <li><a class="link-secondary" href="catalog.html#accessories">Аксессуары</a></li>
+      <p class="pb-3 mb-3 border-bottom">Учебный проект «Контрольная работа №2». Товары и цены условные. Доставка по Москве — на следующий день, оплата при получении.</p>
+      <div class="row g-3 pb-3">
+        <div class="col-6 col-md-3">
+          <h2 class="fs-6 fw-semibold text-dark mb-2">Каталог</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="catalog.html#phones">Смартфоны</a></li>
+            <li><a href="catalog.html#laptops">Ноутбуки</a></li>
+            <li><a href="catalog.html#audio">Аудио</a></li>
+            <li><a href="catalog.html#accessories">Аксессуары</a></li>
           </ul>
         </div>
-        <div class="col-6 col-md-3 col-lg-2">
-          <h2 class="h6 footer-title">Покупателям</h2>
-          <ul class="list-unstyled small mb-0">
-            <li><a class="link-secondary" href="order.html">Оформить заявку</a></li>
-            <li><a class="link-secondary" href="contacts.html">Контакты</a></li>
-            <li><a class="link-secondary" href="contacts.html#faq">Вопросы и ответы</a></li>
+        <div class="col-6 col-md-3">
+          <h2 class="fs-6 fw-semibold text-dark mb-2">Покупателям</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="order.html">Оформить заявку</a></li>
+            <li><a href="contacts.html#faq">Вопросы и ответы</a></li>
           </ul>
         </div>
-        <div class="col-12 col-lg-4">
-          <h2 class="h6 footer-title">Контакты</h2>
-          <ul class="list-unstyled small text-body-secondary mb-0">
-            <li><a class="link-secondary" href="tel:+79000000000">+7 (900) 000-00-00</a></li>
-            <li><a class="link-secondary" href="mailto:info@techbox.example">info@techbox.example</a></li>
-            <li>г. Москва, ул. Учебная, д. 1 · ежедневно 10:00–20:00</li>
+        <div class="col-6 col-md-3">
+          <h2 class="fs-6 fw-semibold text-dark mb-2">Магазин</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="contacts.html">Контакты</a></li>
+            <li>г. Москва, ул. Учебная, д. 1</li>
+            <li>Ежедневно 10:00–20:00</li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="fs-6 fw-semibold text-dark mb-2">Связь</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+            <li><a href="mailto:info@techbox.example">info@techbox.example</a></li>
           </ul>
         </div>
       </div>
-      <hr class="my-4">
-      <div class="d-flex flex-wrap justify-content-between gap-2">
-        <p class="small text-body-secondary mb-0">&copy; 2026 TechBox. Учебный проект, товары и цены условные.</p>
-        <a class="small link-secondary" href="#top">↑ Наверх</a>
+      <div class="d-flex flex-wrap justify-content-between gap-2 pt-3 border-top">
+        <span>&copy; 2026 TechBox</span>
+        <a href="#top">Наверх</a>
       </div>
     </div>
   </footer>
@@ -451,12 +393,12 @@
   <div class="modal fade" id="quickOrderModal" tabindex="-1" aria-labelledby="quickOrderModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <form class="modal-content needs-validation" data-success="Заявка принята. Менеджер перезвонит в течение 15 минут." novalidate>
-        <div class="modal-header">
+        <div class="modal-header border-0">
           <h2 class="modal-title fs-5" id="quickOrderModalLabel">Быстрый заказ</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
-        <div class="modal-body">
-          <div class="alert alert-primary small py-2" role="alert">
+        <div class="modal-body pt-0">
+          <div class="alert alert-light border small py-2" role="alert">
             Товар: <strong data-modal-product>—</strong>. Менеджер перезвонит и уточнит детали.
           </div>
           <input type="hidden" name="product" value="">
@@ -480,9 +422,9 @@
             <div class="invalid-feedback">Без согласия заявку отправить нельзя.</div>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Отмена</button>
-          <button type="submit" class="btn btn-primary">Отправить заявку</button>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-dark rounded-pill" data-bs-dismiss="modal">Отмена</button>
+          <button type="submit" class="btn btn-dark rounded-pill">Отправить заявку</button>
         </div>
       </form>
     </div>
